@@ -16,12 +16,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
         layer.cornerRadius = 6
         layer.masksToBounds = true
     }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//        collectionImage.image = nil
-//    }
-    
+        
     func configureCell(_ image: UIImage?) {
         collectionImage.image = image
     }

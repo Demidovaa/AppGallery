@@ -12,19 +12,21 @@
 		868B904325F8B72000AF8B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904125F8B72000AF8B73 /* Main.storyboard */; };
 		868B904525F8B72100AF8B73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 868B904425F8B72100AF8B73 /* Assets.xcassets */; };
 		868B904825F8B72100AF8B73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904625F8B72100AF8B73 /* LaunchScreen.storyboard */; };
+		86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86AA811325FA4C4B00392D6B /* DetailViewController.swift */; };
 		86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CD437825F9268100E61CA8 /* PinterestLayout.swift */; };
 		86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CD437E25F9300D00E61CA8 /* CustomCollectionViewCell.swift */; };
 		86CD438125F9300D00E61CA8 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CD437F25F9300D00E61CA8 /* CustomCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		868B903825F8B72000AF8B73 /* CollectionView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CollectionView.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		868B903825F8B72000AF8B73 /* Pinterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B903B25F8B72000AF8B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		868B903F25F8B72000AF8B73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		868B904225F8B72000AF8B73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		868B904425F8B72100AF8B73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		868B904725F8B72100AF8B73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		868B904925F8B72100AF8B73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86AA811325FA4C4B00392D6B /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		86CD437825F9268100E61CA8 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		86CD437E25F9300D00E61CA8 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		86CD437F25F9300D00E61CA8 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -52,7 +54,7 @@
 		868B903925F8B72000AF8B73 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				868B903825F8B72000AF8B73 /* CollectionView.app */,
+				868B903825F8B72000AF8B73 /* Pinterest.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,10 +63,10 @@
 			isa = PBXGroup;
 			children = (
 				868B903B25F8B72000AF8B73 /* AppDelegate.swift */,
-				868B903F25F8B72000AF8B73 /* ViewController.swift */,
 				86CD437825F9268100E61CA8 /* PinterestLayout.swift */,
-				868B905725F8BB6E00AF8B73 /* CustomCell */,
 				868B904125F8B72000AF8B73 /* Main.storyboard */,
+				86AA811625FA4C8500392D6B /* Controller */,
+				868B905725F8BB6E00AF8B73 /* CustomCell */,
 				868B904425F8B72100AF8B73 /* Assets.xcassets */,
 				868B904625F8B72100AF8B73 /* LaunchScreen.storyboard */,
 				868B904925F8B72100AF8B73 /* Info.plist */,
@@ -81,12 +83,21 @@
 			path = CustomCell;
 			sourceTree = "<group>";
 		};
+		86AA811625FA4C8500392D6B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				868B903F25F8B72000AF8B73 /* ViewController.swift */,
+				86AA811325FA4C4B00392D6B /* DetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		868B903725F8B72000AF8B73 /* CollectionView */ = {
+		868B903725F8B72000AF8B73 /* Pinterest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 868B904C25F8B72100AF8B73 /* Build configuration list for PBXNativeTarget "CollectionView" */;
+			buildConfigurationList = 868B904C25F8B72100AF8B73 /* Build configuration list for PBXNativeTarget "Pinterest" */;
 			buildPhases = (
 				868B903425F8B72000AF8B73 /* Sources */,
 				868B903525F8B72000AF8B73 /* Frameworks */,
@@ -96,9 +107,9 @@
 			);
 			dependencies = (
 			);
-			name = CollectionView;
+			name = Pinterest;
 			productName = CollectionView;
-			productReference = 868B903825F8B72000AF8B73 /* CollectionView.app */;
+			productReference = 868B903825F8B72000AF8B73 /* Pinterest.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -128,7 +139,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				868B903725F8B72000AF8B73 /* CollectionView */,
+				868B903725F8B72000AF8B73 /* Pinterest */,
 			);
 		};
 /* End PBXProject section */
@@ -154,6 +165,7 @@
 			files = (
 				86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */,
 				868B904025F8B72000AF8B73 /* ViewController.swift in Sources */,
+				86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */,
 				868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */,
 				86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */,
 			);
@@ -347,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		868B904C25F8B72100AF8B73 /* Build configuration list for PBXNativeTarget "CollectionView" */ = {
+		868B904C25F8B72100AF8B73 /* Build configuration list for PBXNativeTarget "Pinterest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				868B904D25F8B72100AF8B73 /* Debug */,
