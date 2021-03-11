@@ -4,34 +4,68 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomCollectionViewCell" customModule="CollectionView" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CustomCollectionViewCell" customModule="Pinterest" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="131" height="180"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                <rect key="frame" x="0.0" y="0.0" width="131" height="180"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJT-pD-NYq">
+                        <rect key="frame" x="0.0" y="140" width="131" height="40"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pM8-zb-hP6">
+                                <rect key="frame" x="20" y="2" width="91" height="38"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pM8-zb-hP6" firstAttribute="top" secondItem="UJT-pD-NYq" secondAttribute="top" constant="2" id="4Yz-6W-j57"/>
+                            <constraint firstItem="pM8-zb-hP6" firstAttribute="leading" secondItem="UJT-pD-NYq" secondAttribute="leading" constant="20" id="AtF-HW-uk2"/>
+                            <constraint firstAttribute="bottom" secondItem="pM8-zb-hP6" secondAttribute="bottom" id="Cdl-b2-7qO"/>
+                            <constraint firstAttribute="height" constant="40" id="GRq-zu-mK2"/>
+                            <constraint firstAttribute="trailing" secondItem="pM8-zb-hP6" secondAttribute="trailing" constant="20" id="ePS-kK-77y"/>
+                        </constraints>
+                    </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Wb-ghP">
-                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                        <rect key="frame" x="0.0" y="0.0" width="131" height="130"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="130" id="8s9-oU-0dF"/>
+                        </constraints>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="gFy-Wb-ghP" secondAttribute="bottom" id="4Qh-5h-bak"/>
                 <constraint firstAttribute="trailing" secondItem="gFy-Wb-ghP" secondAttribute="trailing" id="7tg-uY-L8d"/>
+                <constraint firstAttribute="bottom" secondItem="UJT-pD-NYq" secondAttribute="bottom" id="7wp-GY-qIv"/>
+                <constraint firstAttribute="trailing" secondItem="UJT-pD-NYq" secondAttribute="trailing" id="Gu0-dt-jZA"/>
                 <constraint firstItem="gFy-Wb-ghP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="LeF-c1-CVr"/>
-                <constraint firstItem="gFy-Wb-ghP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="mBo-SZ-tYx"/>
+                <constraint firstItem="gFy-Wb-ghP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="WAA-v1-W6H"/>
+                <constraint firstItem="UJT-pD-NYq" firstAttribute="top" secondItem="gFy-Wb-ghP" secondAttribute="bottom" constant="10" id="mED-Pw-Uiq"/>
+                <constraint firstItem="UJT-pD-NYq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="u8F-AH-CVd"/>
             </constraints>
+            <size key="customSize" width="131" height="180"/>
             <connections>
+                <outlet property="backView" destination="UJT-pD-NYq" id="gV7-TH-4ql"/>
                 <outlet property="collectionImage" destination="gFy-Wb-ghP" id="hZj-qR-K7o"/>
+                <outlet property="infoLabel" destination="pM8-zb-hP6" id="7C6-e0-LeI"/>
             </connections>
-            <point key="canvasLocation" x="-152" y="80"/>
+            <point key="canvasLocation" x="-93.478260869565219" y="123.21428571428571"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     
     //MARK: - Properties
     
-    private var imageSet = [1,2,3,4,5,6,7,8,9,10,11,12]
+    private var imageSet = ["Gerbera", "Cuctus",  "Marguerite", "Chrysanthemum", "Stitchwort", "Rose", "Lily", "Tulip", "Peony", "Cornflower", "Susen", "Lavender", "Lilic", "Sunflower", "Marguerite"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,7 @@ extension ViewController: UICollectionViewDataSource, PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
         let image = UIImage(named: "\(imageSet[indexPath.row])")
         guard let hieght = image?.size.height else { return 0.0 }
-        return hieght / 5
+        return hieght / 7 + 40
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -49,7 +49,7 @@ extension ViewController: UICollectionViewDataSource, PinterestLayoutDelegate {
         guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "CustomCollectionViewCell", for: indexPath)
                 as? CustomCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(UIImage(named: "\(imageSet[indexPath.row])"))
+        cell.configureCell(UIImage(named: "\(imageSet[indexPath.row])"), "\(imageSet[indexPath.row])")
         return cell
     }
 }
