@@ -15,7 +15,7 @@ class CustomCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-//        layer.cornerRadius = 6
+
         layer.masksToBounds = true
         collectionImage.layer.cornerRadius = 6
         backView.layer.cornerRadius = 6

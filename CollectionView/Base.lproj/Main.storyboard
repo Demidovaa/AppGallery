@@ -58,20 +58,54 @@
             </objects>
             <point key="canvasLocation" x="1882.608695652174" y="87.723214285714278"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="BXa-Fg-wvI">
             <objects>
-                <viewController id="7e3-tp-dVb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" id="7e3-tp-dVb" customClass="DetailViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M4K-MM-W6g">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0c-ob-7dG">
+                                <rect key="frame" x="20" y="64" width="62" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title=" Back" image="arrow.uturn.backward" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tabButton:" destination="7e3-tp-dVb" eventType="touchUpInside" id="MyX-2U-jky"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89M-sh-ivR">
+                                <rect key="frame" x="20" y="105" width="374" height="737"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="lOY-lW-8DO"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="lOY-lW-8DO" firstAttribute="trailing" secondItem="89M-sh-ivR" secondAttribute="trailing" constant="20" id="KJF-xv-RDY"/>
+                            <constraint firstItem="89M-sh-ivR" firstAttribute="leading" secondItem="lOY-lW-8DO" secondAttribute="leading" constant="20" id="Qc9-Jb-LXv"/>
+                            <constraint firstItem="lOY-lW-8DO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y0c-ob-7dG" secondAttribute="trailing" symbolic="YES" id="WtP-Og-Uck"/>
+                            <constraint firstItem="lOY-lW-8DO" firstAttribute="bottom" secondItem="89M-sh-ivR" secondAttribute="bottom" constant="20" id="YUh-qp-C0n"/>
+                            <constraint firstItem="Y0c-ob-7dG" firstAttribute="top" secondItem="lOY-lW-8DO" secondAttribute="top" constant="20" id="iW2-Ft-PSA"/>
+                            <constraint firstItem="89M-sh-ivR" firstAttribute="top" secondItem="Y0c-ob-7dG" secondAttribute="bottom" constant="20" id="mth-n4-q2w"/>
+                            <constraint firstItem="Y0c-ob-7dG" firstAttribute="leading" secondItem="lOY-lW-8DO" secondAttribute="leading" constant="20" id="t0t-lV-s3k"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="backButton" destination="Y0c-ob-7dG" id="BUc-LG-RJj"/>
+                        <outlet property="textView" destination="89M-sh-ivR" id="nW2-Rd-fh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZo-4N-NON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2744" y="80"/>
+            <point key="canvasLocation" x="2743.4782608695655" y="79.6875"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9z-Gu-WBd">
@@ -99,7 +133,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.uturn.backward" catalog="system" width="128" height="112"/>
         <image name="backgroundImage" width="800" height="1200"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
