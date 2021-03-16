@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flowers-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController">
@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-VU-FLc">
-                                <rect key="frame" x="0.0" y="144" width="414" height="718"/>
+                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="kf9-hf-0Ti" customClass="PinterestLayout" customModule="Pinterest" customModuleProvider="target"/>
                                 <cells>
@@ -35,23 +35,37 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuY-DQ-UL1">
+                                <rect key="frame" x="20" y="88" width="374" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="0N5-aK-cEK"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="shadowColor" systemColor="systemYellowColor"/>
+                                <size key="shadowOffset" width="1" height="2"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5iI-VU-FLc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7So-ca-M8f"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8SH-Pb-7PW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5iI-VU-FLc" secondAttribute="bottom" id="Rcj-sj-Yqf"/>
+                            <constraint firstItem="AuY-DQ-UL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XXH-LG-rtW"/>
                             <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="e3u-yp-uls"/>
                             <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f8b-jK-VNJ"/>
                             <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6e-fr-zh9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AuY-DQ-UL1" secondAttribute="trailing" constant="20" id="j8M-XY-8Gb"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p4z-Pe-y3y"/>
+                            <constraint firstItem="AuY-DQ-UL1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r70-bg-7tC"/>
                             <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yPb-BV-kf4"/>
+                            <constraint firstItem="5iI-VU-FLc" firstAttribute="top" secondItem="AuY-DQ-UL1" secondAttribute="bottom" id="z3a-Tc-8pm"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flowers" largeTitleDisplayMode="always" id="eSd-Wp-6dz"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="eSd-Wp-6dz"/>
                     <connections>
                         <outlet property="collectionView" destination="5iI-VU-FLc" id="xfE-Ft-7PX"/>
+                        <outlet property="titleLabel" destination="AuY-DQ-UL1" id="igi-C5-jIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -66,22 +80,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0c-ob-7dG">
-                                <rect key="frame" x="20" y="64" width="62" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title=" Back" image="arrow.uturn.backward" catalog="system">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="tabButton:" destination="7e3-tp-dVb" eventType="touchUpInside" id="MyX-2U-jky"/>
-                                </connections>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="89M-sh-ivR">
-                                <rect key="frame" x="20" y="105" width="374" height="737"/>
+                                <rect key="frame" x="20" y="64" width="374" height="778"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -89,17 +92,13 @@
                         <viewLayoutGuide key="safeArea" id="lOY-lW-8DO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="89M-sh-ivR" firstAttribute="top" secondItem="lOY-lW-8DO" secondAttribute="top" constant="20" id="EI4-bB-wqR"/>
                             <constraint firstItem="lOY-lW-8DO" firstAttribute="trailing" secondItem="89M-sh-ivR" secondAttribute="trailing" constant="20" id="KJF-xv-RDY"/>
                             <constraint firstItem="89M-sh-ivR" firstAttribute="leading" secondItem="lOY-lW-8DO" secondAttribute="leading" constant="20" id="Qc9-Jb-LXv"/>
-                            <constraint firstItem="lOY-lW-8DO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Y0c-ob-7dG" secondAttribute="trailing" symbolic="YES" id="WtP-Og-Uck"/>
                             <constraint firstItem="lOY-lW-8DO" firstAttribute="bottom" secondItem="89M-sh-ivR" secondAttribute="bottom" constant="20" id="YUh-qp-C0n"/>
-                            <constraint firstItem="Y0c-ob-7dG" firstAttribute="top" secondItem="lOY-lW-8DO" secondAttribute="top" constant="20" id="iW2-Ft-PSA"/>
-                            <constraint firstItem="89M-sh-ivR" firstAttribute="top" secondItem="Y0c-ob-7dG" secondAttribute="bottom" constant="20" id="mth-n4-q2w"/>
-                            <constraint firstItem="Y0c-ob-7dG" firstAttribute="leading" secondItem="lOY-lW-8DO" secondAttribute="leading" constant="20" id="t0t-lV-s3k"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="Y0c-ob-7dG" id="BUc-LG-RJj"/>
                         <outlet property="textView" destination="89M-sh-ivR" id="nW2-Rd-fh6"/>
                     </connections>
                 </viewController>
@@ -112,8 +111,8 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="gZX-eZ-LGF" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="jKY-vM-gWK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="100"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jKY-vM-gWK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
@@ -124,20 +123,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="uAJ-2f-vac"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SOn-is-jfb"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihJ-jP-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="88.392857142857139"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="l9X-0H-Wzr">
+            <objects>
+                <viewController storyboardIdentifier="ImageViewController" id="jmq-9l-Vxi" customClass="ImageViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XBO-5D-mfg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="ERQ-ZB-hcB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pph-Fn-XOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1006" y="815"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="arrow.uturn.backward" catalog="system" width="128" height="112"/>
         <image name="backgroundImage" width="800" height="1200"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

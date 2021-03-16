@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     //MARK: - Properties
@@ -17,17 +18,28 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        titleLabel.text = "Flowers"
         createCell()
         
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
+        
         guard let layout = collectionView.collectionViewLayout as? PinterestLayout else { return }
         layout.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigatinBar()
+    }
+    
     //MARK: - Private Func
+    
+    private func configureNavigatinBar() {
+        navigationController?.navigationBar.isHidden = true
+    }
     
     private func createCell() {
         let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
@@ -62,10 +74,9 @@ extension ViewController: UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else { return }
-        detailVC.modalPresentationStyle = .fullScreen
         guard let image = UIImage(named: "\(imageSet[indexPath.row])") else { return }
         detailVC.image = image
         detailVC.imageName = "\(imageSet[indexPath.row])"
-        self.present(detailVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

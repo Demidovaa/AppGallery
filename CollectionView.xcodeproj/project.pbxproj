@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154425FFAA170017E6C9 /* ImageScrollView.swift */; };
+		864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154925FFABCA0017E6C9 /* ImageViewController.swift */; };
 		868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903B25F8B72000AF8B73 /* AppDelegate.swift */; };
 		868B904025F8B72000AF8B73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903F25F8B72000AF8B73 /* ViewController.swift */; };
 		868B904325F8B72000AF8B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904125F8B72000AF8B73 /* Main.storyboard */; };
@@ -20,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		864B154425FFAA170017E6C9 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
+		864B154925FFABCA0017E6C9 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		868B903825F8B72000AF8B73 /* Pinterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B903B25F8B72000AF8B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		868B903F25F8B72000AF8B73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 			children = (
 				868B903B25F8B72000AF8B73 /* AppDelegate.swift */,
 				86CD437825F9268100E61CA8 /* PinterestLayout.swift */,
+				864B154425FFAA170017E6C9 /* ImageScrollView.swift */,
 				86AA812025FB885200392D6B /* Document.swift */,
 				868B904125F8B72000AF8B73 /* Main.storyboard */,
 				86AA811625FA4C8500392D6B /* Controller */,
@@ -91,6 +96,7 @@
 			children = (
 				868B903F25F8B72000AF8B73 /* ViewController.swift */,
 				86AA811325FA4C4B00392D6B /* DetailViewController.swift */,
+				864B154925FFABCA0017E6C9 /* ImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -168,9 +174,11 @@
 			files = (
 				86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */,
 				868B904025F8B72000AF8B73 /* ViewController.swift in Sources */,
+				864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */,
 				86AA812125FB885200392D6B /* Document.swift in Sources */,
 				86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */,
 				868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */,
+				864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */,
 				86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
