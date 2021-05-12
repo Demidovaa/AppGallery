@@ -10,15 +10,19 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet private weak var textView: UITextView!
-        
-    var imageName = ""
-    var image = UIImage()
-    let doc = Document()
+    //MARK: - IBOutlet
+    
+    @IBOutlet private weak var collectionView: UICollectionView!
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTextView(image)
+        createCell()
+        
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,26 +41,9 @@ class DetailViewController: UIViewController {
         navigationBar?.isHidden = false
     }
     
-    private func configureTextView(_ image: UIImage) {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tapHandler))
-        let imageView = UIImageView(image: image)
-        
-        imageView.frame = CGRect(x: 0, y: 10, width: 200, height: 240)
-        imageView.contentMode = .scaleAspectFill
-        imageView.layer.cornerRadius = 6
-        imageView.clipsToBounds = true
-        
-        imageView.isUserInteractionEnabled = true
-        imageView.addGestureRecognizer(tap)
-        
-        textView.textContainer.exclusionPaths = [UIBezierPath(rect: imageView.frame)]
-        textView.addSubview(imageView)
-        
-        textView.backgroundColor = .clear
-        textView.text = doc.description["\(imageName)"]
-        
-        textView.isEditable = false
-        textView.isSelectable = false
+    private func createCell() {
+        let nib = UINib(nibName: "DetailCollectionViewCell", bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: "DetailCollectionViewCell")
     }
     
     private func setGradientBackground() {
@@ -70,13 +57,26 @@ class DetailViewController: UIViewController {
         
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
+}
+
+extension DetailViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 12
+    }
     
-    @objc
-    private func tapHandler() {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionViewCell", for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
+        cell.configureCell(image: nil)
+        return cell
+    }
+}
+
+extension DetailViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let imageVC = storyboard.instantiateViewController(withIdentifier: "ImageViewController")
                 as? ImageViewController else { return }
-        imageVC.image = UIImage(named: imageName)!
+        imageVC.image = UIImage(named: "noImage")! // needs to be replaced!
         self.navigationController?.pushViewController(imageVC, animated: true)
     }
 }

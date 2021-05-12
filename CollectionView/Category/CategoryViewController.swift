@@ -7,18 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class CategoryViewController: UIViewController {
+    
+    //MARK: - IBOutlet
     
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var collectionView: UICollectionView!
     
     //MARK: - Properties
     
-    private var imageSet = ["Gerbera", "Cactus",  "Marguerite", "Chrysanthemum", "Stitchwort", "Rose", "Lily", "Tulip", "Peony", "Cornflower", "Susen", "Lavender", "Lilic", "Sunflower", "Chamomile"]
+    private var datasource: [Model] = Provider.getCategory()
+    
+    //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = "Flowers"
+        titleLabel.text = "Category"
         createCell()
         
         collectionView.delegate = self
@@ -47,36 +51,34 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: UICollectionViewDataSource {
+extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageSet.count
+        return datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(
                 withReuseIdentifier: "CustomCollectionViewCell", for: indexPath)
                 as? CustomCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(UIImage(named: "\(imageSet[indexPath.row])"), "\(imageSet[indexPath.row])")
+        cell.configureCell(datasource[indexPath.row].image, datasource[indexPath.row].name)
         return cell
     }
 }
 
-extension ViewController: PinterestLayoutDelegate {
+extension CategoryViewController: PinterestLayoutDelegate {
     func collectionView(_ collectionView: UICollectionView, heightForPhotoAtIndexPath indexPath: IndexPath) -> CGFloat {
-        let image = UIImage(named: "\(imageSet[indexPath.row])")
-        guard let hieght = image?.size.height else { return 0.0 }
+        let image = datasource[indexPath.row].image
+        let hieght = image.size.height
         return hieght / 7 + 40
     }
 }
 
-extension ViewController: UICollectionViewDelegate {
+extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else { return }
-        guard let image = UIImage(named: "\(imageSet[indexPath.row])") else { return }
-        detailVC.image = image
-        detailVC.imageName = "\(imageSet[indexPath.row])"
+
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }
