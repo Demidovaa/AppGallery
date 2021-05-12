@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154425FFAA170017E6C9 /* ImageScrollView.swift */; };
 		864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154925FFABCA0017E6C9 /* ImageViewController.swift */; };
+		8674C0D4264C0C6D00CACA7F /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */; };
+		8674C0E1264C111300CACA7F /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 8674C0E0264C111300CACA7F /* Data */; };
+		8674C0E3264C13E100CACA7F /* Flowers in Resources */ = {isa = PBXBuildFile; fileRef = 8674C0E2264C13E100CACA7F /* Flowers */; };
 		868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903B25F8B72000AF8B73 /* AppDelegate.swift */; };
 		868B904025F8B72000AF8B73 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903F25F8B72000AF8B73 /* CategoryViewController.swift */; };
 		868B904325F8B72000AF8B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904125F8B72000AF8B73 /* Main.storyboard */; };
@@ -27,6 +30,9 @@
 /* Begin PBXFileReference section */
 		864B154425FFAA170017E6C9 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		864B154925FFABCA0017E6C9 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		8674C0E0264C111300CACA7F /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
+		8674C0E2264C13E100CACA7F /* Flowers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Flowers; sourceTree = "<group>"; };
 		868B903825F8B72000AF8B73 /* Pinterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B903B25F8B72000AF8B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		868B903F25F8B72000AF8B73 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,8 @@
 				86AA811625FA4C8500392D6B /* Detail */,
 				86F214A6264ABC96002A4B9A /* ImagePresentation */,
 				868B904425F8B72100AF8B73 /* Assets.xcassets */,
+				8674C0E2264C13E100CACA7F /* Flowers */,
+				8674C0E0264C111300CACA7F /* Data */,
 				868B904925F8B72100AF8B73 /* Info.plist */,
 			);
 			path = CollectionView;
@@ -129,6 +137,7 @@
 			children = (
 				86F214A1264A9EC8002A4B9A /* Model.swift */,
 				86F214A3264AA06F002A4B9A /* Provider.swift */,
+				8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */,
 			);
 			path = ModelData;
 			sourceTree = "<group>";
@@ -209,8 +218,10 @@
 			files = (
 				868B904825F8B72100AF8B73 /* LaunchScreen.storyboard in Resources */,
 				868B904525F8B72100AF8B73 /* Assets.xcassets in Resources */,
+				8674C0E1264C111300CACA7F /* Data in Resources */,
 				868B904325F8B72000AF8B73 /* Main.storyboard in Resources */,
 				86CD438125F9300D00E61CA8 /* CustomCollectionViewCell.xib in Resources */,
+				8674C0E3264C13E100CACA7F /* Flowers in Resources */,
 				86F214AB264AC060002A4B9A /* DetailCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -229,6 +240,7 @@
 				86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */,
 				868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */,
 				864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */,
+				8674C0D4264C0C6D00CACA7F /* PhotoDataSource.swift in Sources */,
 				86F214A2264A9EC8002A4B9A /* Model.swift in Sources */,
 				86F214A4264AA06F002A4B9A /* Provider.swift in Sources */,
 				86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */,

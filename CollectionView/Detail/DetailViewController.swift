@@ -10,15 +10,21 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    let dataSource = PhotosDataSource(directory: "Flowers")
+    lazy var images = dataSource.loadImages()
+    
     //MARK: - IBOutlet
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var infoLabel: UILabel!
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         createCell()
+        
+        infoLabel.isHidden = !images.isEmpty
         
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
@@ -61,12 +67,12 @@ class DetailViewController: UIViewController {
 
 extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionViewCell", for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(image: nil)
+        cell.configureCell(image: images[indexPath.row])
         return cell
     }
 }
@@ -76,7 +82,7 @@ extension DetailViewController: UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let imageVC = storyboard.instantiateViewController(withIdentifier: "ImageViewController")
                 as? ImageViewController else { return }
-        imageVC.image = UIImage(named: "noImage")! // needs to be replaced!
+        imageVC.image = images[indexPath.row]
         self.navigationController?.pushViewController(imageVC, animated: true)
     }
 }

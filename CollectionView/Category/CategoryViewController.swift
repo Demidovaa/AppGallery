@@ -31,12 +31,32 @@ class CategoryViewController: UIViewController {
         
         guard let layout = collectionView.collectionViewLayout as? PinterestLayout else { return }
         layout.delegate = self
+        layout.currentTrait = traitCollection
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureNavigatinBar()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        guard previousTraitCollection != nil else { return }
+        if let customLayout = collectionView.collectionViewLayout as? PinterestLayout {
+            customLayout.currentTrait = traitCollection
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.collectionView.collectionViewLayout.invalidateLayout()
+        }) { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
     }
     
     //MARK: - Private Func
@@ -78,7 +98,7 @@ extension CategoryViewController: UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else { return }
-
+        
         self.navigationController?.pushViewController(detailVC, animated: true)
     }
 }

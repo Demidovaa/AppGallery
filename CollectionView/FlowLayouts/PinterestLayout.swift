@@ -15,6 +15,14 @@ class PinterestLayout: UICollectionViewLayout {
     // 1
     weak var delegate: PinterestLayoutDelegate?
     
+    var currentTrait: UITraitCollection? {
+        willSet {
+            if newValue != currentTrait {
+                cache.removeAll()
+            }
+        }
+    }
+    
     // 2
     private let numberOfColumns = 2
     private let cellPadding: CGFloat = 6
