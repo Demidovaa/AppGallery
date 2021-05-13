@@ -12,6 +12,7 @@
 		8674C0D4264C0C6D00CACA7F /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */; };
 		8674C0E1264C111300CACA7F /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 8674C0E0264C111300CACA7F /* Data */; };
 		8674C0E3264C13E100CACA7F /* Flowers in Resources */ = {isa = PBXBuildFile; fileRef = 8674C0E2264C13E100CACA7F /* Flowers */; };
+		868AAF49264D335100A4E9D6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868AAF48264D335100A4E9D6 /* PageViewController.swift */; };
 		868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903B25F8B72000AF8B73 /* AppDelegate.swift */; };
 		868B904025F8B72000AF8B73 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903F25F8B72000AF8B73 /* CategoryViewController.swift */; };
 		868B904325F8B72000AF8B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904125F8B72000AF8B73 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
 		8674C0E0264C111300CACA7F /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		8674C0E2264C13E100CACA7F /* Flowers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Flowers; sourceTree = "<group>"; };
+		868AAF48264D335100A4E9D6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		868B903825F8B72000AF8B73 /* Pinterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B903B25F8B72000AF8B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		868B903F25F8B72000AF8B73 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				864B154425FFAA170017E6C9 /* ImageScrollView.swift */,
 				864B154925FFABCA0017E6C9 /* ImageViewController.swift */,
+				868AAF48264D335100A4E9D6 /* PageViewController.swift */,
 			);
 			path = ImagePresentation;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */,
 				868B904025F8B72000AF8B73 /* CategoryViewController.swift in Sources */,
 				864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */,
+				868AAF49264D335100A4E9D6 /* PageViewController.swift in Sources */,
 				86F214AA264AC060002A4B9A /* DetailCollectionViewCell.swift in Sources */,
 				86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */,
 				868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */,

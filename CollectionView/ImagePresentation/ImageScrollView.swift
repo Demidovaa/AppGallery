@@ -21,7 +21,7 @@ class ImageScrollView: UIScrollView {
         super.init(frame: frame)
         
         self.delegate = self
-        self.backgroundColor = .systemBackground
+        self.backgroundColor = .black
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
         

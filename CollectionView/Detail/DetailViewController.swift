@@ -80,9 +80,10 @@ extension DetailViewController: UICollectionViewDataSource {
 extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let imageVC = storyboard.instantiateViewController(withIdentifier: "ImageViewController")
-                as? ImageViewController else { return }
-        imageVC.image = images[indexPath.row]
-        self.navigationController?.pushViewController(imageVC, animated: true)
+        guard let page = storyboard.instantiateViewController(withIdentifier: "PageViewController")
+                as? PageViewController else { return }
+        page.photos = images
+        page.currentIndex = indexPath.row
+        self.navigationController?.pushViewController(page, animated: true)
     }
 }

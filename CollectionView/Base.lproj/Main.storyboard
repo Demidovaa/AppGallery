@@ -50,15 +50,15 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8SH-Pb-7PW"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kwh-uE-58o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5iI-VU-FLc" secondAttribute="bottom" id="Rcj-sj-Yqf"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XXH-LG-rtW"/>
-                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="e3u-yp-uls"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f8b-jK-VNJ"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6e-fr-zh9"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am1-fZ-v1o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AuY-DQ-UL1" secondAttribute="trailing" constant="20" id="j8M-XY-8Gb"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p4z-Pe-y3y"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r70-bg-7tC"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yPb-BV-kf4"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tWK-70-8MD"/>
+                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="xkk-GB-AIr"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="top" secondItem="AuY-DQ-UL1" secondAttribute="bottom" id="z3a-Tc-8pm"/>
                         </constraints>
                     </view>
@@ -70,7 +70,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882.608695652174" y="87.723214285714278"/>
+            <point key="canvasLocation" x="1686" y="88"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BXa-Fg-wvI">
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZo-4N-NON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743.4782608695655" y="79.6875"/>
+            <point key="canvasLocation" x="2429" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9z-Gu-WBd">
@@ -147,12 +147,20 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SOn-is-jfb"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y1v-Q4-sFV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihJ-jP-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.7971014492755" y="88.392857142857139"/>
+            <point key="canvasLocation" x="886" y="88"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Lsd-ea-dQX">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="qfs-hb-Z40" customClass="PageViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRv-qr-io4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="88"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="l9X-0H-Wzr">
@@ -167,7 +175,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pph-Fn-XOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="815"/>
+            <point key="canvasLocation" x="3857" y="88"/>
         </scene>
     </scenes>
     <resources>
