@@ -38,6 +38,11 @@ class DetailViewController: UIViewController {
         setGradientBackground()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        setGradientBackground()
+    }
+    
     //MARK: - Private func
     
     private func configureNavigationBar() {
@@ -53,6 +58,9 @@ class DetailViewController: UIViewController {
     }
     
     private func setGradientBackground() {
+        if let layer = self.view.layer.sublayers?.first, layer is CAGradientLayer {
+            layer.removeFromSuperlayer()
+        }
         let colorTop = UIColor.systemYellow.cgColor
         let colorBottom = UIColor.white.cgColor
         
@@ -60,7 +68,7 @@ class DetailViewController: UIViewController {
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = self.view.bounds
-        
+    
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 }

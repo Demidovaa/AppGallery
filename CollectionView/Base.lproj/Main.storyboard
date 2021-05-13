@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-VU-FLc">
-                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="kf9-hf-0Ti" customClass="PinterestLayout" customModule="Pinterest" customModuleProvider="target"/>
                                 <cells>
@@ -36,9 +36,9 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuY-DQ-UL1">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0N5-aK-cEK"/>
+                                    <constraint firstAttribute="height" constant="60" id="0N5-aK-cEK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,17 +50,41 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8SH-Pb-7PW"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Kwh-uE-58o"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Kwh-uE-58o">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5iI-VU-FLc" secondAttribute="bottom" id="Rcj-sj-Yqf"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XXH-LG-rtW"/>
                             <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am1-fZ-v1o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AuY-DQ-UL1" secondAttribute="trailing" constant="20" id="j8M-XY-8Gb"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kwN-c7-e1g"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="no6-z5-AkP"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p4z-Pe-y3y"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r70-bg-7tC"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tWK-70-8MD"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rLp-7G-nIR"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tWK-70-8MD">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="wEn-dc-KLO"/>
                             <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="xkk-GB-AIr"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="top" secondItem="AuY-DQ-UL1" secondAttribute="bottom" id="z3a-Tc-8pm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kwN-c7-e1g"/>
+                                <exclude reference="no6-z5-AkP"/>
+                                <exclude reference="rLp-7G-nIR"/>
+                                <exclude reference="wEn-dc-KLO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="kwN-c7-e1g"/>
+                                <include reference="no6-z5-AkP"/>
+                                <include reference="rLp-7G-nIR"/>
+                                <include reference="wEn-dc-KLO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="eSd-Wp-6dz"/>
                     <connections>
