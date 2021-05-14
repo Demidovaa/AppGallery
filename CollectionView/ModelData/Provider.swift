@@ -17,4 +17,9 @@ struct Provider {
             Model(name: "Cars", image: UIImage(named: "Cars") ?? image)
         ]
     }
+    
+    static func loadData(directory name: String) -> [UIImage] {
+        let directory = PhotosDataSource(directory: name)
+        return directory.loadImages()
+    }
 }

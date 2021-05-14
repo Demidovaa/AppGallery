@@ -21,7 +21,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="5iI-VU-FLc">
-                                <rect key="frame" x="0.0" y="188" width="414" height="674"/>
+                                <rect key="frame" x="0.0" y="148" width="414" height="714"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewLayout key="collectionViewLayout" id="kf9-hf-0Ti" customClass="PinterestLayout" customModule="Pinterest" customModuleProvider="target"/>
                                 <cells>
@@ -36,9 +36,9 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuY-DQ-UL1">
-                                <rect key="frame" x="20" y="88" width="374" height="100"/>
+                                <rect key="frame" x="20" y="88" width="374" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="0N5-aK-cEK"/>
+                                    <constraint firstAttribute="height" constant="60" id="0N5-aK-cEK"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="45"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -50,17 +50,41 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="8SH-Pb-7PW"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="Kwh-uE-58o">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5iI-VU-FLc" secondAttribute="bottom" id="Rcj-sj-Yqf"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="XXH-LG-rtW"/>
-                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="e3u-yp-uls"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="f8b-jK-VNJ"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="g6e-fr-zh9"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="am1-fZ-v1o"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AuY-DQ-UL1" secondAttribute="trailing" constant="20" id="j8M-XY-8Gb"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kwN-c7-e1g"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="no6-z5-AkP"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="p4z-Pe-y3y"/>
                             <constraint firstItem="AuY-DQ-UL1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="r70-bg-7tC"/>
-                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yPb-BV-kf4"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rLp-7G-nIR"/>
+                            <constraint firstItem="V2k-TW-qHa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tWK-70-8MD">
+                                <variation key="widthClass=regular" constant="0.0"/>
+                            </constraint>
+                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="wEn-dc-KLO"/>
+                            <constraint firstAttribute="bottom" secondItem="V2k-TW-qHa" secondAttribute="bottom" id="xkk-GB-AIr"/>
                             <constraint firstItem="5iI-VU-FLc" firstAttribute="top" secondItem="AuY-DQ-UL1" secondAttribute="bottom" id="z3a-Tc-8pm"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="kwN-c7-e1g"/>
+                                <exclude reference="no6-z5-AkP"/>
+                                <exclude reference="rLp-7G-nIR"/>
+                                <exclude reference="wEn-dc-KLO"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular">
+                            <mask key="constraints">
+                                <include reference="kwN-c7-e1g"/>
+                                <include reference="no6-z5-AkP"/>
+                                <include reference="rLp-7G-nIR"/>
+                                <include reference="wEn-dc-KLO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="eSd-Wp-6dz"/>
                     <connections>
@@ -70,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1882.608695652174" y="87.723214285714278"/>
+            <point key="canvasLocation" x="1686" y="88"/>
         </scene>
         <!--Detail View Controller-->
         <scene sceneID="BXa-Fg-wvI">
@@ -87,37 +111,48 @@
                                     <size key="itemSize" width="77" height="84"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="5" maxX="9" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="9oB-JA-38k" customClass="DetailCollectionViewCell" customModule="Pinterest" customModuleProvider="target">
-                                        <rect key="frame" x="10" y="5" width="77" height="84"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="baQ-fg-Fnf">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="tMn-xP-orz">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="84"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="xHp-kh-yLo">
                                             <rect key="frame" x="0.0" y="0.0" width="77" height="84"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="77" height="84"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Images" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eji-C8-cZ8">
+                                <rect key="frame" x="140.5" y="411" width="133.5" height="74"/>
+                                <fontDescription key="fontDescription" name="Zapfino" family="Zapfino" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="1" height="3"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="lOY-lW-8DO"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="lOY-lW-8DO" firstAttribute="trailing" secondItem="7r6-tn-aBC" secondAttribute="trailing" id="1vO-US-BmQ"/>
+                            <constraint firstItem="7r6-tn-aBC" firstAttribute="centerX" secondItem="M4K-MM-W6g" secondAttribute="centerX" id="8tP-cB-hup"/>
+                            <constraint firstItem="Eji-C8-cZ8" firstAttribute="centerX" secondItem="7r6-tn-aBC" secondAttribute="centerX" id="DOf-Wt-PPg"/>
                             <constraint firstItem="7r6-tn-aBC" firstAttribute="leading" secondItem="lOY-lW-8DO" secondAttribute="leading" id="ejg-j8-dS2"/>
+                            <constraint firstItem="Eji-C8-cZ8" firstAttribute="centerY" secondItem="M4K-MM-W6g" secondAttribute="centerY" id="omp-p9-TXt"/>
                             <constraint firstItem="7r6-tn-aBC" firstAttribute="top" secondItem="lOY-lW-8DO" secondAttribute="top" id="yuy-xf-B6G"/>
                             <constraint firstItem="lOY-lW-8DO" firstAttribute="bottom" secondItem="7r6-tn-aBC" secondAttribute="bottom" id="zpo-TH-uvq"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="7r6-tn-aBC" id="nr7-ID-mzK"/>
+                        <outlet property="infoLabel" destination="Eji-C8-cZ8" id="bIq-yr-uKJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZo-4N-NON" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2743.4782608695655" y="79.6875"/>
+            <point key="canvasLocation" x="2429" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="u9z-Gu-WBd">
@@ -136,12 +171,20 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="SOn-is-jfb"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y1v-Q4-sFV"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ihJ-jP-xSh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005.7971014492755" y="88.392857142857139"/>
+            <point key="canvasLocation" x="886" y="88"/>
+        </scene>
+        <!--Page View Controller-->
+        <scene sceneID="Lsd-ea-dQX">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="qfs-hb-Z40" customClass="PageViewController" customModule="Pinterest" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xRv-qr-io4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3146" y="88"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="l9X-0H-Wzr">
@@ -156,7 +199,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pph-Fn-XOh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1006" y="815"/>
+            <point key="canvasLocation" x="3857" y="88"/>
         </scene>
     </scenes>
     <resources>

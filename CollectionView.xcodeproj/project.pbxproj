@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154425FFAA170017E6C9 /* ImageScrollView.swift */; };
 		864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864B154925FFABCA0017E6C9 /* ImageViewController.swift */; };
+		8674C0D4264C0C6D00CACA7F /* PhotoDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */; };
+		868AAF49264D335100A4E9D6 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868AAF48264D335100A4E9D6 /* PageViewController.swift */; };
+		868AAF4B264E841600A4E9D6 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868AAF4A264E841600A4E9D6 /* UICollectionView+Extension.swift */; };
+		868AAF4E264E847600A4E9D6 /* ClassNameExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868AAF4D264E847600A4E9D6 /* ClassNameExtension.swift */; };
 		868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903B25F8B72000AF8B73 /* AppDelegate.swift */; };
 		868B904025F8B72000AF8B73 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868B903F25F8B72000AF8B73 /* CategoryViewController.swift */; };
 		868B904325F8B72000AF8B73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 868B904125F8B72000AF8B73 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 		86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CD437825F9268100E61CA8 /* PinterestLayout.swift */; };
 		86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CD437E25F9300D00E61CA8 /* CustomCollectionViewCell.swift */; };
 		86CD438125F9300D00E61CA8 /* CustomCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86CD437F25F9300D00E61CA8 /* CustomCollectionViewCell.xib */; };
+		86D5292D264ED1FE00392D0B /* Cars in Resources */ = {isa = PBXBuildFile; fileRef = 86D5292C264ED1FE00392D0B /* Cars */; };
+		86D5292F264ED23600392D0B /* Cities in Resources */ = {isa = PBXBuildFile; fileRef = 86D5292E264ED23600392D0B /* Cities */; };
+		86D52931264ED24100392D0B /* Flowers in Resources */ = {isa = PBXBuildFile; fileRef = 86D52930264ED24100392D0B /* Flowers */; };
+		86D52933264ED24800392D0B /* Food in Resources */ = {isa = PBXBuildFile; fileRef = 86D52932264ED24800392D0B /* Food */; };
 		86F214A2264A9EC8002A4B9A /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F214A1264A9EC8002A4B9A /* Model.swift */; };
 		86F214A4264AA06F002A4B9A /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F214A3264AA06F002A4B9A /* Provider.swift */; };
 		86F214AA264AC060002A4B9A /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86F214A8264AC060002A4B9A /* DetailCollectionViewCell.swift */; };
@@ -27,6 +35,10 @@
 /* Begin PBXFileReference section */
 		864B154425FFAA170017E6C9 /* ImageScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollView.swift; sourceTree = "<group>"; };
 		864B154925FFABCA0017E6C9 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDataSource.swift; sourceTree = "<group>"; };
+		868AAF48264D335100A4E9D6 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		868AAF4A264E841600A4E9D6 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		868AAF4D264E847600A4E9D6 /* ClassNameExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassNameExtension.swift; sourceTree = "<group>"; };
 		868B903825F8B72000AF8B73 /* Pinterest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinterest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868B903B25F8B72000AF8B73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		868B903F25F8B72000AF8B73 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +50,10 @@
 		86CD437825F9268100E61CA8 /* PinterestLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinterestLayout.swift; sourceTree = "<group>"; };
 		86CD437E25F9300D00E61CA8 /* CustomCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCollectionViewCell.swift; sourceTree = "<group>"; };
 		86CD437F25F9300D00E61CA8 /* CustomCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCollectionViewCell.xib; sourceTree = "<group>"; };
+		86D5292C264ED1FE00392D0B /* Cars */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cars; sourceTree = "<group>"; };
+		86D5292E264ED23600392D0B /* Cities */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Cities; sourceTree = "<group>"; };
+		86D52930264ED24100392D0B /* Flowers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Flowers; sourceTree = "<group>"; };
+		86D52932264ED24800392D0B /* Food */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Food; sourceTree = "<group>"; };
 		86F214A1264A9EC8002A4B9A /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		86F214A3264AA06F002A4B9A /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		86F214A8264AC060002A4B9A /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -55,6 +71,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		868AAF4C264E841C00A4E9D6 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				868AAF4A264E841600A4E9D6 /* UICollectionView+Extension.swift */,
+				868AAF4D264E847600A4E9D6 /* ClassNameExtension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		868B902F25F8B72000AF8B73 = {
 			isa = PBXGroup;
 			children = (
@@ -77,12 +102,17 @@
 				868B903B25F8B72000AF8B73 /* AppDelegate.swift */,
 				868B904125F8B72000AF8B73 /* Main.storyboard */,
 				868B904625F8B72100AF8B73 /* LaunchScreen.storyboard */,
+				868AAF4C264E841C00A4E9D6 /* Extension */,
 				86F214AF264AD649002A4B9A /* FlowLayouts */,
 				86F214A7264ABCB1002A4B9A /* ModelData */,
 				86F214A5264ABC6F002A4B9A /* Category */,
 				86AA811625FA4C8500392D6B /* Detail */,
 				86F214A6264ABC96002A4B9A /* ImagePresentation */,
 				868B904425F8B72100AF8B73 /* Assets.xcassets */,
+				86D52932264ED24800392D0B /* Food */,
+				86D52930264ED24100392D0B /* Flowers */,
+				86D5292E264ED23600392D0B /* Cities */,
+				86D5292C264ED1FE00392D0B /* Cars */,
 				868B904925F8B72100AF8B73 /* Info.plist */,
 			);
 			path = CollectionView;
@@ -120,6 +150,7 @@
 			children = (
 				864B154425FFAA170017E6C9 /* ImageScrollView.swift */,
 				864B154925FFABCA0017E6C9 /* ImageViewController.swift */,
+				868AAF48264D335100A4E9D6 /* PageViewController.swift */,
 			);
 			path = ImagePresentation;
 			sourceTree = "<group>";
@@ -129,6 +160,7 @@
 			children = (
 				86F214A1264A9EC8002A4B9A /* Model.swift */,
 				86F214A3264AA06F002A4B9A /* Provider.swift */,
+				8674C0D3264C0C6D00CACA7F /* PhotoDataSource.swift */,
 			);
 			path = ModelData;
 			sourceTree = "<group>";
@@ -208,10 +240,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				868B904825F8B72100AF8B73 /* LaunchScreen.storyboard in Resources */,
+				86D52931264ED24100392D0B /* Flowers in Resources */,
 				868B904525F8B72100AF8B73 /* Assets.xcassets in Resources */,
 				868B904325F8B72000AF8B73 /* Main.storyboard in Resources */,
 				86CD438125F9300D00E61CA8 /* CustomCollectionViewCell.xib in Resources */,
 				86F214AB264AC060002A4B9A /* DetailCollectionViewCell.xib in Resources */,
+				86D52933264ED24800392D0B /* Food in Resources */,
+				86D5292F264ED23600392D0B /* Cities in Resources */,
+				86D5292D264ED1FE00392D0B /* Cars in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +261,14 @@
 				86CD437925F9268100E61CA8 /* PinterestLayout.swift in Sources */,
 				868B904025F8B72000AF8B73 /* CategoryViewController.swift in Sources */,
 				864B154525FFAA170017E6C9 /* ImageScrollView.swift in Sources */,
+				868AAF49264D335100A4E9D6 /* PageViewController.swift in Sources */,
 				86F214AA264AC060002A4B9A /* DetailCollectionViewCell.swift in Sources */,
 				86AA811425FA4C4B00392D6B /* DetailViewController.swift in Sources */,
+				868AAF4B264E841600A4E9D6 /* UICollectionView+Extension.swift in Sources */,
 				868B903C25F8B72000AF8B73 /* AppDelegate.swift in Sources */,
 				864B154A25FFABCA0017E6C9 /* ImageViewController.swift in Sources */,
+				868AAF4E264E847600A4E9D6 /* ClassNameExtension.swift in Sources */,
+				8674C0D4264C0C6D00CACA7F /* PhotoDataSource.swift in Sources */,
 				86F214A2264A9EC8002A4B9A /* Model.swift in Sources */,
 				86F214A4264AA06F002A4B9A /* Provider.swift in Sources */,
 				86CD438025F9300D00E61CA8 /* CustomCollectionViewCell.swift in Sources */,

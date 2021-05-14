@@ -10,25 +10,32 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    //MARK: - Properties
+    
+    var images: [UIImage] = []
+    
     //MARK: - IBOutlet
     
     @IBOutlet private weak var collectionView: UICollectionView!
+    @IBOutlet private weak var infoLabel: UILabel!
     
     //MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createCell()
-        
-        collectionView.backgroundColor = .clear
-        collectionView.dataSource = self
-        collectionView.delegate = self
+        configureCollectionView()
+        infoLabel.isHidden = !images.isEmpty
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         configureNavigationBar()
+        setGradientBackground()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         setGradientBackground()
     }
     
@@ -41,12 +48,17 @@ class DetailViewController: UIViewController {
         navigationBar?.isHidden = false
     }
     
-    private func createCell() {
-        let nib = UINib(nibName: "DetailCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "DetailCollectionViewCell")
+    private func configureCollectionView() {
+        collectionView.register(cellType: DetailCollectionViewCell.self)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func setGradientBackground() {
+        if let layer = self.view.layer.sublayers?.first, layer is CAGradientLayer {
+            layer.removeFromSuperlayer()
+        }
         let colorTop = UIColor.systemYellow.cgColor
         let colorBottom = UIColor.white.cgColor
         
@@ -54,19 +66,20 @@ class DetailViewController: UIViewController {
         gradientLayer.colors = [colorTop, colorBottom]
         gradientLayer.locations = [0.0, 1.0]
         gradientLayer.frame = self.view.bounds
-        
+    
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
 }
 
 extension DetailViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 12
+        return images.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionViewCell", for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
-        cell.configureCell(image: nil)
+        let cell = collectionView.dequeueReusableCell(with: DetailCollectionViewCell.self,
+                                                      for: indexPath)
+        cell.configureCell(image: images[indexPath.row])
         return cell
     }
 }
@@ -74,9 +87,10 @@ extension DetailViewController: UICollectionViewDataSource {
 extension DetailViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let imageVC = storyboard.instantiateViewController(withIdentifier: "ImageViewController")
-                as? ImageViewController else { return }
-        imageVC.image = UIImage(named: "noImage")! // needs to be replaced!
-        self.navigationController?.pushViewController(imageVC, animated: true)
+        guard let page = storyboard.instantiateViewController(withIdentifier: "PageViewController")
+                as? PageViewController else { return }
+        page.photos = images
+        page.currentIndex = indexPath.row
+        self.navigationController?.pushViewController(page, animated: true)
     }
 }

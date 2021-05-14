@@ -16,12 +16,12 @@ class DetailCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         layer.masksToBounds = true
-        detailImage.backgroundColor = .orange
         detailImage.layer.cornerRadius = 6
     }
     
     func configureCell(image: UIImage?) {
         guard let image = image else { return detailImage.image = UIImage(named: "noImage") }
         detailImage.image =  image
+        detailImage.contentMode = .scaleAspectFill
     }
 }

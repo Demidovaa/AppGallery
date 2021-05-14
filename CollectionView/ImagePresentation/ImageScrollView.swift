@@ -21,10 +21,9 @@ class ImageScrollView: UIScrollView {
         super.init(frame: frame)
         
         self.delegate = self
-        self.backgroundColor = .systemBackground
+        self.backgroundColor = .black
         self.showsVerticalScrollIndicator = false
         self.showsHorizontalScrollIndicator = false
-        
     }
     
     required init?(coder: NSCoder) {
@@ -41,6 +40,8 @@ class ImageScrollView: UIScrollView {
         
         configurateFor(imageSize: image.size)
     }
+    
+    //MARK: - Private Func
     
     private func configurateFor(imageSize: CGSize) {
         self.contentSize = imageSize
@@ -81,24 +82,9 @@ class ImageScrollView: UIScrollView {
         self.minimumZoomScale = minScale
         self.maximumZoomScale = maxScale
     }
-    
+        
     private func centreImage() {
-        let boundsSize = self.bounds.size
-        var frameToCenter = imageZoomView.frame
-
-        if frameToCenter.size.width < boundsSize.width {
-            frameToCenter.origin.x = (boundsSize.width + frameToCenter.size.width) / 4
-        } else {
-            frameToCenter.origin.x = 0
-        }
-
-        if frameToCenter.size.height < boundsSize.height {
-            frameToCenter.origin.y = (boundsSize.height - frameToCenter.size.height) / 4
-        } else {
-            frameToCenter.origin.y = 0
-        }
-
-        imageZoomView.frame = frameToCenter
+        imageZoomView.center = CGPoint(x: self.bounds.midX, y: self.bounds.midY)
     }
     
     @objc

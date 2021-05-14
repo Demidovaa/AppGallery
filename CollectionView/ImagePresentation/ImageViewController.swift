@@ -9,8 +9,13 @@ import UIKit
 
 class ImageViewController: UIViewController {
     
+    //MARK: - Properties
+    
     var imageScrollView: ImageScrollView!
     var image = UIImage()
+    var photoIndex: Int!
+    
+    //MARK: Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +36,8 @@ class ImageViewController: UIViewController {
     //MARK: - Private func
     
     private func configureNavigationBar() {
-        navigationController?.navigationBar.barTintColor = .systemBackground
+        navigationController?.navigationBar.barTintColor = .black
+        navigationController?.navigationBar.tintColor = .white
     }
     
     private func setupImageScrollView() {

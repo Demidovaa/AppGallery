@@ -23,14 +23,7 @@ class CategoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = "Category"
-        createCell()
-        
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.showsVerticalScrollIndicator = false
-        
-        guard let layout = collectionView.collectionViewLayout as? PinterestLayout else { return }
-        layout.delegate = self
+        configureCollectionView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,15 +32,40 @@ class CategoryViewController: UIViewController {
         configureNavigatinBar()
     }
     
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
+        
+        guard previousTraitCollection != nil else { return }
+        if let customLayout = collectionView.collectionViewLayout as? PinterestLayout {
+            customLayout.currentTrait = traitCollection
+        }
+    }
+    
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransition(to: newCollection, with: coordinator)
+        
+        coordinator.animate(alongsideTransition: { [weak self] _ in
+            self?.collectionView.collectionViewLayout.invalidateLayout()
+        }) { [weak self] _ in
+            self?.collectionView.reloadData()
+        }
+    }
+    
     //MARK: - Private Func
     
     private func configureNavigatinBar() {
         navigationController?.navigationBar.isHidden = true
     }
     
-    private func createCell() {
-        let nib = UINib(nibName: "CustomCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "CustomCollectionViewCell")
+    private func configureCollectionView() {
+        collectionView.register(cellType: CustomCollectionViewCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsVerticalScrollIndicator = false
+        
+        guard let layout = collectionView.collectionViewLayout as? PinterestLayout else { return }
+        layout.delegate = self
+        layout.currentTrait = traitCollection
     }
 }
 
@@ -57,9 +75,8 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(
-                withReuseIdentifier: "CustomCollectionViewCell", for: indexPath)
-                as? CustomCollectionViewCell else { return UICollectionViewCell() }
+        let cell = collectionView.dequeueReusableCell(with: CustomCollectionViewCell.self,
+                                                      for: indexPath)
         cell.configureCell(datasource[indexPath.row].image, datasource[indexPath.row].name)
         return cell
     }
@@ -76,9 +93,11 @@ extension CategoryViewController: PinterestLayoutDelegate {
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let detailVC = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
+        guard let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else { return }
-
-        self.navigationController?.pushViewController(detailVC, animated: true)
+        let photo = Provider.loadData(directory: datasource[indexPath.row].name)
+        controller.images = photo
+        
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
