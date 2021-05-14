@@ -14,12 +14,15 @@ class PhotosDataSource: NSObject {
         directoryName.self = directory
     }
 
-    private var directoryName: String = "Data"
+    private var directoryName: String?
     
     private var urls: [URL] {
-        Bundle.main.urls(forResourcesWithExtension: .none, subdirectory: directoryName)!
+        guard let name = directoryName,
+              let urls = Bundle.main.urls(forResourcesWithExtension: .none,
+                                          subdirectory: name) else { return [] }
+        return urls
     }
-
+    
     func loadImages() -> [UIImage] {
         return urls
             .compactMap { try? Data(contentsOf: $0) }

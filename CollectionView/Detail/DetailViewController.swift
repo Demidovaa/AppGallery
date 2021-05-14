@@ -10,8 +10,9 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    let dataSource = PhotosDataSource(directory: "Flowers")
-    lazy var images = dataSource.loadImages()
+    //MARK: - Properties
+    
+    var images: [UIImage] = []
     
     //MARK: - IBOutlet
     
@@ -22,13 +23,8 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createCell()
-        
+        configureCollectionView()
         infoLabel.isHidden = !images.isEmpty
-        
-        collectionView.backgroundColor = .clear
-        collectionView.dataSource = self
-        collectionView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,9 +48,11 @@ class DetailViewController: UIViewController {
         navigationBar?.isHidden = false
     }
     
-    private func createCell() {
-        let nib = UINib(nibName: "DetailCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "DetailCollectionViewCell")
+    private func configureCollectionView() {
+        collectionView.register(cellType: DetailCollectionViewCell.self)
+        collectionView.backgroundColor = .clear
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     private func setGradientBackground() {
@@ -79,7 +77,8 @@ extension DetailViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionViewCell", for: indexPath) as? DetailCollectionViewCell else { return UICollectionViewCell() }
+        let cell = collectionView.dequeueReusableCell(with: DetailCollectionViewCell.self,
+                                                      for: indexPath)
         cell.configureCell(image: images[indexPath.row])
         return cell
     }
