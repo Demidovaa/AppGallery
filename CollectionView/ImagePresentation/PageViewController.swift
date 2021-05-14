@@ -20,10 +20,16 @@ class PageViewController: UIPageViewController {
         super.viewDidLoad()
         
         configureView()
-    }
+        
+        navigationItem.rightBarButtonItem =
+            UIBarButtonItem(image: UIImage(systemName: "square.and.arrow.up"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(openActivityView))
+        }
     
     //MARK: - Private func
-    
+        
     private func configureView() {
         if let viewController = presentController(currentIndex ?? 0) {
             let viewControllers = [viewController]
@@ -38,6 +44,15 @@ class PageViewController: UIPageViewController {
         page.photoIndex = index
         page.image = photos[index]
         return page
+    }
+    
+    @objc
+    private func openActivityView() {
+        guard let index = currentIndex else { return }
+        let items = [photos[index]]
+        let controller = UIActivityViewController(activityItems: items,
+                                                  applicationActivities: nil)
+        present(controller, animated: true)
     }
 }
 
