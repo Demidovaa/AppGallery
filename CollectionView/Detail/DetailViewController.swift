@@ -14,7 +14,7 @@ class DetailViewController: UIViewController {
     
     var images: [UIImage] = []
     var category: String?
-    
+
     //MARK: - IBOutlet
     
     @IBOutlet private weak var collectionView: UICollectionView!
@@ -32,6 +32,11 @@ class DetailViewController: UIViewController {
         super.viewWillAppear(animated)
         
         configureNavigationBar(name: category ?? "")
+        setGradientBackground()
+    }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        super.traitCollectionDidChange(previousTraitCollection)
         setGradientBackground()
     }
     
