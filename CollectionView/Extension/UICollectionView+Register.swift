@@ -1,5 +1,5 @@
 //
-//  UICollectionView+Extension.swift
+//  UICollectionView+Register.swift
 //  Pinterest
 //
 //  Created by Anastasia Demidova on 14.05.2021.

@@ -7,14 +7,12 @@
 
 import UIKit
 
-class PhotosDataSource: NSObject {
+class PhotosDataSource {
+    private var directoryName: String?
     
     init(directory: String) {
-        super.init()
-        directoryName.self = directory
+        directoryName = directory
     }
-
-    private var directoryName: String?
     
     private var urls: [URL] {
         guard let name = directoryName,

@@ -95,8 +95,10 @@ extension CategoryViewController: UICollectionViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let controller = storyboard.instantiateViewController(withIdentifier: "DetailViewController")
                 as? DetailViewController else { return }
-        let photo = Provider.loadData(directory: datasource[indexPath.row].name)
+        let name = datasource[indexPath.row].name
+        let photo = Provider.loadData(directory: name)
         controller.images = photo
+        controller.category = name
         
         self.navigationController?.pushViewController(controller, animated: true)
     }

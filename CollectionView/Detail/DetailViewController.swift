@@ -13,6 +13,7 @@ class DetailViewController: UIViewController {
     //MARK: - Properties
     
     var images: [UIImage] = []
+    var category: String?
     
     //MARK: - IBOutlet
     
@@ -30,7 +31,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        configureNavigationBar()
+        configureNavigationBar(name: category ?? "")
         setGradientBackground()
     }
     
@@ -41,7 +42,9 @@ class DetailViewController: UIViewController {
     
     //MARK: - Private func
     
-    private func configureNavigationBar() {
+    private func configureNavigationBar(name category: String) {
+        navigationItem.title = category
+        
         let navigationBar = navigationController?.navigationBar
         navigationBar?.barTintColor = .systemYellow
         navigationBar?.tintColor = .black
