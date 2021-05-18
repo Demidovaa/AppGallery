@@ -40,11 +40,6 @@ class DetailViewController: UIViewController {
         setGradientBackground()
     }
     
-    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
-        super.traitCollectionDidChange(previousTraitCollection)
-        setGradientBackground()
-    }
-    
     //MARK: - Private func
     
     private func configureNavigationBar(name category: String) {
